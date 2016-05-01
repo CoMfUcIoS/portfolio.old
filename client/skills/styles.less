@@ -1,0 +1,36 @@
+section.skills {
+  background: #d82c2e;
+  h4 {
+    color: #000000 !important;
+  }
+}
+
+.skill {
+  margin: 0 auto 20px;
+  float: none;
+  text-align: center;
+}
+
+.chart {
+  position: relative;
+  width: 152px;
+  height: 152px;
+  display: inline-block;
+  margin: 0 0 25px;
+  text-align: center;
+  canvas {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+  .percent {
+    font-family: Lato, sans-serif;
+    color: #000000;
+    line-height: 152px;
+    display: inline-block;
+    font-size: 35px;
+    &:after {
+      content: '%';
+    }
+  }
+}

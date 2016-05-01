@@ -1,0 +1,33 @@
+<template name="welcome">
+  <!--{{> addSlideForm}}-->
+  <section id="welcome">
+    <div id="slides">
+      <div class="overlay"></div>
+      <div class="slides-container">
+        {{#each slide}}
+          <img src="images/slides/{{name}}" alt="{{@index}}">
+        {{/each}}
+      </div>
+      <nav class="slides-navigation">
+        <a href="#" class="next"></a>
+        <a href="#" class="prev"></a>
+      </nav>
+      <div class="welcome-message">
+        <div class="heading">
+          <p>{{about.name}}
+           {{#if currentUser}}
+              <img class="editButton" src="images/timeline-item.png" />
+            {{/if}}
+          </p>
+          <p class="small">{{about.title}}
+            {{#if currentUser}}
+              <img class="editButton" src="images/timeline-item.png" />
+            {{/if}}
+          </p>
+
+        </div><a href="#home" class="borderBtn scrollto">MORE ABOUT ME</a>
+      </div>
+    </div>
+  </section>
+  {{initSuperslides}}
+</template>
