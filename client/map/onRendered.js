@@ -2,7 +2,7 @@ Template.map.onRendered(function() {
   var self = this;
   this.autorun(function() {
     Template.currentData();
-
+    var about = app.collections.about.findOne()
     function s() {
       var e = {
         zoom: 14,
@@ -96,7 +96,7 @@ Template.map.onRendered(function() {
       };
       var t = document.getElementById("map"),
         n = new google.maps.Map(t, e),
-        r = "Ioannis Karasavvaidis<br />   Software Engineer",
+        r = about.name + "<br />" + about.title,
         i = new google.maps.InfoWindow({
           content: r
         }),
