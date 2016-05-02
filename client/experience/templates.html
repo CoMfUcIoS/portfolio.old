@@ -8,6 +8,17 @@
       <div class="row">
         <div class="timeline">
           <ul>
+          {{#each experience}}
+          <li class="animated {{#if odd}}odd{{/if}}">
+              <div class="point"></div>
+              <div class="bubble">
+                <div class="bubble-arrow"></div>
+                <p class="date">{{date}}</p>
+                <p class="name">{{name}}</p>
+                <p class="title">{{title}}</p>
+              </div>
+            </li>
+          {{/each}}
             <li class="animated">
               <div class="point"></div>
               <div class="bubble">
