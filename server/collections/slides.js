@@ -6,7 +6,7 @@ var SlidesList = new Mongo.Collection('slides');
 
 Meteor.publish('theSlides', function() {
   return SlidesList.find({
-    createdBy: lib.getCurrentUserId(this.userId)
+    createdBy: spearhead.getCurrentUserId(this.userId)
   });
 });
 
@@ -19,7 +19,7 @@ Meteor.methods({
    */
   'addSlide': function(filename) {
     check(filename, String);
-    var currentUserId = lib.getCurrentUserId(this.userId);
+    var currentUserId = spearhead.getCurrentUserId(this.userId);
     if (currentUserId) {
       SlidesList.insert({
         name: filename,
@@ -34,7 +34,7 @@ Meteor.methods({
    */
   'removeSlide': function(selectedSlide) {
     check(selectedSlide, String);
-    var currentUserId = lib.getCurrentUserId(this.userId);
+    var currentUserId = spearhead.getCurrentUserId(this.userId);
     if (currentUserId) {
       SlidesList.insert({
         _id: selectedSlide,

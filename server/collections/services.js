@@ -6,7 +6,7 @@
 
  Meteor.publish('theServices', function() {
    return Services.find({
-     createdBy: lib.getCurrentUserId(this.userId)
+     createdBy: spearhead.getCurrentUserId(this.userId)
    });
  });
 
@@ -17,14 +17,14 @@
     * @method  updateAbout
     */
    'updateService': function(object) {
-     var serviceId = lib.objectGet(object, 'serviceId', null),
+     var serviceId = spearhead.objectGet(object, 'serviceId', null),
        currentUserId;
      if (!serviceId) {
        return false;
      }
      delete object.serviceId;
      check(serviceId, String);
-     currentUserId = lib.getCurrentUserId(this.userId);
+     currentUserId = spearhead.getCurrentUserId(this.userId);
      if (currentUserId) {
        object.createdBy = currentUserId;
        Services.upsert({

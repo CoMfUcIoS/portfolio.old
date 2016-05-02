@@ -1,9 +1,9 @@
 Template.welcome.helpers({
   'slide': function() {
-    return SlidesList.find().fetch();
+    return app.collections.slidesList.find().fetch();
   },
   'about': function() {
-    return About.findOne();
+    return app.collections.about.findOne();
   }
 });
 

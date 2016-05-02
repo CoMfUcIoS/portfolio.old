@@ -1,9 +1,9 @@
 Template.services.helpers({
 	'about': function() {
-		return About.findOne();
+		return app.collections.about.findOne();
 	},
 	'service': function() {
-		return Services
+		return app.collections.services
 			.find({}, {
 				sort: {
 					rank: 1

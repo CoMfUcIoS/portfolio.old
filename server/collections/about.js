@@ -7,7 +7,7 @@ var About = new Mongo.Collection('about');
 
 Meteor.publish('aboutMe', function() {
   return About.find({
-    createdBy: lib.getCurrentUserId(this.userId)
+    createdBy: spearhead.getCurrentUserId(this.userId)
   });
 });
 
@@ -22,7 +22,7 @@ Meteor.methods({
     Object.keys(object).forEach(function(key) {
       check(object[key], String);
     });
-    var currentUserId = lib.getCurrentUserId(this.userId);
+    var currentUserId = spearhead.getCurrentUserId(this.userId);
     if (currentUserId) {
       object.createdBy = currentUserId;
       About.upsert({

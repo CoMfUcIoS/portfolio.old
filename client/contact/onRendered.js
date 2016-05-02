@@ -32,7 +32,7 @@ Template.contact.onRendered(function() {
         n = $("form[name=contactform] textarea[name='send[message]']").val();
 
       Meteor.call('sendEmail',
-        lib.personalEmail,
+        spearhead.personalEmail,
         t,
         'Hello from ' + e,
         n);
