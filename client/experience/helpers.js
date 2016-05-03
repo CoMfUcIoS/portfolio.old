@@ -1,7 +1,11 @@
 Template.experience.helpers({
     experience: function() {
         var index = 0,
-            exp = app.collections.experience.find(); // TODO: change this to method call ( you need to add the collection first)
+            exp = app.collections.experience.find({}, {
+                sort: {
+                    rank: 1
+                }
+            }); 
         return exp.map(function(experience, index, cursor) {
             experience._index = index++;
             return experience;

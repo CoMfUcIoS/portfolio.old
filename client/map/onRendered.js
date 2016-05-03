@@ -1,8 +1,7 @@
 Template.map.onRendered(function() {
-  var self = this;
   this.autorun(function() {
     Template.currentData();
-    var about = app.collections.about.findOne()
+    var about = app.collections.about.findOne();
     function s() {
       var e = {
         zoom: 14,

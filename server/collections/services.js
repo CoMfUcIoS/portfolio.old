@@ -18,7 +18,7 @@
     */
    'updateService': function(object) {
      var serviceId = spearhead.objectGet(object, 'serviceId', null),
-       currentUserId;
+         currentUserId;
      if (!serviceId) {
        return false;
      }
