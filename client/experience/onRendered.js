@@ -1,14 +1,14 @@
 Template.experience.onRendered(function() {
-	var t = $(window).height(),
-			r = $(".timeline").offset().top;
+  var t = $(window).height(),
+      r = $('.timeline').offset().top;
 
-  $(window).bind("resize", function() {
+  $(window).bind('resize', function() {
     t = $(window).height();
   });
 
   $(window).scroll(function() {
     if (window.pageYOffset > r - t + 200) {
-      $(".timeline li").addClass("fadeInUp");
+      $('.timeline li').addClass('fadeInUp');
     }
   });
 
@@ -17,9 +17,9 @@ Template.experience.onRendered(function() {
       // get the dragged html element and the one before
       //   and after it
       var el = ui.item.get(0),
-        before = ui.item.prev().get(0),
-        after = ui.item.next().get(0),
-        newRank;
+          before = ui.item.prev().get(0),
+          after = ui.item.next().get(0),
+          newRank;
 
       // Here is the part that blew my mind!
       //  Blaze.getData takes as a parameter an html element

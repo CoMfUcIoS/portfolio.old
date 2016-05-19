@@ -17,7 +17,7 @@ Meteor.methods({
    * @method  addSlide
    * @param  {String} filename File name of the slide
    */
-  'addSlide': function(filename) {
+  addSlide: function(filename) {
     check(filename, String);
     var currentUserId = spearhead.getCurrentUserId(this.userId);
     if (currentUserId) {
@@ -29,10 +29,10 @@ Meteor.methods({
   },
   /**
    * Removes the given slide from the database
-   * 
-   * @param  {String} selectedSlide Slide _id 
+   *
+   * @param  {String} selectedSlide Slide _id
    */
-  'removeSlide': function(selectedSlide) {
+  removeSlide: function(selectedSlide) {
     check(selectedSlide, String);
     var currentUserId = spearhead.getCurrentUserId(this.userId);
     if (currentUserId) {
@@ -42,7 +42,7 @@ Meteor.methods({
       });
     }
   },
-  'console': function() {
-  	console.log('this method is called :D ');
+  console: function() {
+    console.log('this method is called :D ');
   }
 });

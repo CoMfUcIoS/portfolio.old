@@ -13,10 +13,12 @@
  Meteor.methods({
    /**
     * Updates a service
-    * 
+    *
     * @method  updateAbout
+    * @param   {Object}  object Object containing data to be saved in database.
+    * @returns {Boolean}        If database updated returns true.
     */
-   'updateService': function(object) {
+   updateService: function(object) {
      var serviceId = spearhead.objectGet(object, 'serviceId', null),
          currentUserId;
      if (!serviceId) {
@@ -33,6 +35,8 @@
        }, {
          $set: object
        });
+       return true;
      }
+     return false;
    }
  });
