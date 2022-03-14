@@ -6,10 +6,3 @@ Template.welcome.helpers({
     return app.collections.about.findOne();
   }
 });
-
-Template.registerHelper('initSuperSlides', function() {
-  $('#slides').superslides({
-    animation: 'fade',
-    play: 5e3
-  });
-});

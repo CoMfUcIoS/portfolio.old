@@ -7,6 +7,5 @@ Template.welcome.onRendered(function() {
 
     document.title = spearhead.objectGet(about, 'name') +
       ' - ' + spearhead.objectGet(about, 'title');
-    superSlides.init();
   });
 });
